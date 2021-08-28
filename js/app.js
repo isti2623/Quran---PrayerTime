@@ -49,7 +49,7 @@ const showSura = sura => {
 
     const showSura = document.getElementById("showSura");
     sura.forEach(element => {
-        console.log(element);
+
         const div = document.createElement('div');
         div.innerHTML = `
     <div class="card-header">অর্থ : ${element.englishNameTranslation}</div>
