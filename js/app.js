@@ -39,21 +39,23 @@ const loadSura = () => {
 
     fetch(url)
         .then(res => res.json())
-        .then(data => showSura(data))
+        .then(data => showSura(data.data))
 }
 
 loadSura();
 
 
 const showSura = sura => {
+
     const showSura = document.getElementById("showSura");
     sura.forEach(element => {
+        console.log(element);
         const div = document.createElement('div');
         div.innerHTML = `
-    <div class="card-header">${element.data[0].englishName}</div>
+    <div class="card-header">অর্থ : ${element.englishNameTranslation}</div>
     <div class="card-body text-primary">
-        <h5 class="card-title">${element.data[0].englishNameTranslation}</h5>
-        <p class="card-text">${element.data[0].numberOfAyahs}</p>
+        <h5 class="card-title">সূরা নাম : ${element.englishName}</h5>
+        <p class="card-text">আয়াত সংখ্যা : ${element.numberOfAyahs}</p>
     </div>
     `
         showSura.appendChild(div);
